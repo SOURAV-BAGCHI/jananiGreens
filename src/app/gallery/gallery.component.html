@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row my-3"></div>
+  <mat-card class="example-card  my-4">
+    <div class="row mb-3">
+      <div class="col-sm-12">
+        <span class="gradient_text_2">Janani's Gallery</span>
+      </div>
+    </div>
+
+    <div>
+      <ng-opengallery
+      [datasource]='this.data'
+      [config]='this.config0'
+      (change)='onChange($event)'
+      (error)='onError($event)'
+      (selection)='onSelection($event)'
+      (open)='onOpen($event)'>
+    </ng-opengallery>
+    <div class="my-3">
+  
+    </div>
+      <ng-opengallery
+      [datasource]='this.data'
+      [config]='this.config'
+      (change)='onChange($event)'
+      (error)='onError($event)'
+      (selection)='onSelection($event)'
+      (open)='onOpen($event)'>
+    </ng-opengallery>
+    </div>
+  </mat-card>
+  
+</div>
