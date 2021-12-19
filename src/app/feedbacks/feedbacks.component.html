@@ -1,0 +1,91 @@
+<div>
+    <div class="container min-ht">
+        <div class="row">
+            <div class="col-sm-12">
+                <mat-card class="example-card  my-4">
+                    <div *ngIf="isLoadingData">
+                        <div class="d-flex align-items-center">
+                            <strong>Loading Feedbacks...</strong>
+                            <div class="spinner-border text-success ml-auto" role="status" aria-hidden="true"></div>
+                          </div>
+                    </div>
+                    <div *ngIf="feedbackList.length>0">
+                        <h2>Recent reviews for Janani Greens</h2>
+                        <div class="row">
+                            <div class="col-sm-12 my-3" *ngFor="let feedback of feedbackList">
+                                <p>
+                                <!-- <span class="rating-container" [ngClass]="{'bg-success':feedback.rating>=4,'bg-warning':(feedback.rating<4 && feedback.rating>2),'bg-danger':feedback.rating<3}" >  -->
+                                    <span class="rating-container bg-success" >
+                                    <span>{{feedback.rating}}</span>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                <span class="review-title">
+                                    {{feedback.reviewTitle}}
+                                </span>
+                                </p>
+                                <p class="review">{{feedback.review}}</p>
+                                <p class="review-info">
+                                    <span>
+                                        {{feedback.customerName}}
+                                    </span>
+                                    <span class="dt-style">
+                                        {{feedback.feedbackDate | date:'medium'}}
+                                    </span>
+                                </p>
+                                <hr>
+                            </div>
+                            <!-- <div class="col-sm-12 my-3">
+                                <p>
+                                <span class="rating-container">
+                                    <span>5</span>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                    <span class="review-title">
+                                        Value for money
+                                    </span>
+                                </p>
+                                <p class="review">After the Government of India Allowed Re-Opening of The Hospitality Sector in Early-Mid July 2020, I made a Plan to Visit Shantiniketan, Bolpur. But, I was Quite Sceptical due to the Probability that I Might be Putting My Family at Risk. But Suraj (The Manager of 'Hotel Royal Bengal') Assured Me Time & Again that They Have Been Taking Extra Precautions along with the Government Guidelines and We Would be Provided with the Best Safety Measures Possible.</p>
+                                <p class="review-info">
+                                    <span>
+                                        Sourav Bagchi
+                                    </span>
+                                    <span class="dt-style">
+                                        27th Nov 2020
+                                    </span>
+                                </p>
+                                <hr>
+                            </div>
+                            <div class="col-sm-12 my-3">
+                                <p>
+                                <span class="rating-container">
+                                    <span>5</span>
+                                    <i class="fas fa-star"></i>
+                                </span>
+                                    <span class="review-title">
+                                        Value for money
+                                    </span>
+                                </p>
+                                <p class="review">After the Government of India Allowed Re-Opening of The Hospitality Sector in Early-Mid July 2020, I made a Plan to Visit Shantiniketan, Bolpur. But, I was Quite Sceptical due to the Probability that I Might be Putting My Family at Risk. But Suraj (The Manager of 'Hotel Royal Bengal') Assured Me Time & Again that They Have Been Taking Extra Precautions along with the Government Guidelines and We Would be Provided with the Best Safety Measures Possible.</p>
+                                <p class="review-info">
+                                    <span>
+                                        Sourav Bagchi
+                                    </span>
+                                    <span class="dt-style">
+                                        27th Nov 2020
+                                    </span>
+                                </p>
+                                <hr>
+                            </div> -->
+                        </div>
+                    </div>
+                    <div *ngIf="!isLoadingData && feedbackList.length==0">
+                        <p>
+                            No feedback present
+                        </p>
+                    </div>
+                    
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
